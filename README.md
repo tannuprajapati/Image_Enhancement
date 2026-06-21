@@ -101,14 +101,4 @@ npm run build
 * Cloud Storage Support
 * Batch Image Processing
 
-## 👨‍💻 Author
 
-**Krishna Prajapati**
-
-B.Tech CSE (AI & ML)
-
-Quantum University, Roorkee
-
-## 📄 License
-
-This project is licensed under the MIT License.
