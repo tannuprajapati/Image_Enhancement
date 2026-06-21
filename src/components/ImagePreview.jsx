@@ -1,57 +1,56 @@
 import Loading from "./Loading";
-import DownloadButton from "./DownloadButton";
-import { FiDownload } from "react-icons/fi";
 
 const ImagePreview = (props) => {
-    console.log(props);
     return (
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="mt-10 w-full max-w-6xl flex flex-col lg:flex-row gap-8 justify-center">
 
             {/* Original Image */}
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-                <h2 className="text-xl font-semibold text-center bg-gray-800 text-white py-2">
+            <div className="bg-white shadow-xl rounded-2xl overflow-hidden flex-1 min-w-[350px]">
+                <h2 className="text-2xl font-semibold text-center bg-slate-800 text-white py-4">
                     Original Image
                 </h2>
 
                 {props.uploaded ? (
                     <img
                         src={props.uploaded}
-                        alt="Original Image"
-                        className="w-full h-80 object-cover"
+                        alt="Original"
+                        className="w-full h-[300px] object-cover"
                     />
                 ) : (
-                    <div className="flex items-center justify-center h-80 bg-gray-200">
+                    <div className="flex items-center justify-center h-[300px] bg-gray-100 text-gray-500 text-lg">
                         No Image Selected
                     </div>
                 )}
             </div>
 
             {/* Enhanced Image */}
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-                <h2 className="text-xl font-semibold text-center bg-blue-800 text-white py-2">
+            <div className="bg-white shadow-xl rounded-2xl overflow-hidden flex-1 min-w-[350px]">
+                <h2 className="text-2xl font-semibold text-center bg-blue-700 text-white py-4">
                     Enhanced Image
                 </h2>
 
                 {props.loading ? (
-                    <Loading />
+                    <div className="h-[300px] flex items-center justify-center">
+                        <Loading />
+                    </div>
                 ) : props.enhanced ? (
                     <div className="relative">
                         <img
                             src={props.enhanced}
-                            alt="Enhanced Image"
-                            className="w-full h-80 object-cover"
+                            alt="Enhanced"
+                            className="w-full h-[300px] object-cover"
                         />
 
                         <a
                             href={props.enhanced}
                             download="enhanced-image.png"
-                            className="absolute top-3 right-3 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hover:scale-110 transition-all"
+                            className="absolute top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300"
                         >
-                            <FiDownload size={20} />
+                            Download
                         </a>
                     </div>
                 ) : (
-                    <div className="flex items-center justify-center h-80 bg-gray-200">
+                    <div className="flex items-center justify-center h-[300px] bg-gray-100 text-gray-500 text-lg">
                         No Enhanced Image
                     </div>
                 )}
