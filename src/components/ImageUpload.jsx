@@ -32,16 +32,16 @@ const ImageUpload = (props) => {
     };
 
     return (
-        <div className="bg-white shadow-lg rounded-2xl p-4 w-full max-w-2xl">
+        <div className="w-full max-w-3xl">
             <label
                 htmlFor="fileInput"
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
-                className={`block w-full cursor-pointer border-2 border-dashed rounded-xl py-8 px-6 text-center transition-all duration-300 ${
+                className={`block cursor-pointer rounded-3xl border-2 border-dashed transition-all duration-300 shadow-xl ${
                     isDragging
-                        ? "border-blue-500 bg-blue-50 scale-[1.02]"
-                        : "border-gray-300 hover:border-blue-500"
+                        ? "border-blue-500 bg-blue-100 scale-[1.02]"
+                        : "border-gray-300 bg-white hover:border-blue-500"
                 }`}
             >
                 <input
@@ -52,18 +52,20 @@ const ImageUpload = (props) => {
                     onChange={ShowImageHandler}
                 />
 
-                <div className="flex flex-col items-center gap-2">
-                    <div className="text-3xl">📸</div>
+              <div className="py-6 px-6 flex flex-col items-center">
+                   <div className="text-4xl mb-2">
+                        📸
+                    </div>
 
-                    <h3 className="text-lg font-semibold text-gray-700">
+                  <h2 className="text-lg font-bold text-slate-800">
                         Drag & Drop Your Image
-                    </h3>
+                    </h2>
 
-                    <p className="text-sm text-gray-500">
+                   <p className="text-sm text-gray-500 mt-1">
                         or click to browse files
                     </p>
 
-                    <span className="text-xs text-gray-400">
+                    <span className="mt-2 text-sm text-gray-400">
                         JPG • PNG • WEBP
                     </span>
                 </div>
